@@ -1,0 +1,23 @@
+{
+  "name": "node-rest-postman",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fendy132us/node_rest_postman.git"
+  },
+  "keywords": [
+    "nodejs",
+    "rest_postman"
+  ],
+  "author": "Wewen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fendy132us/node_rest_postman/issues"
+  },
+  "homepage": "https://github.com/fendy132us/node_rest_postman#readme"
+}
