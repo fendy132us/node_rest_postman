@@ -5,7 +5,7 @@ exports.ok = function(value,resp)
     var data = 
     {
         'status' :200,
-        'values' :values
+        'value' :value
     }
     resp.json(data);
     resp.end();

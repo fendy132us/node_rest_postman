@@ -5,7 +5,7 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-var routes = require('/router');
+var routes = require('./router');
 routes(app);
 
 app.listen(3000, () => {

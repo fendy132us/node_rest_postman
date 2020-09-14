@@ -4,8 +4,8 @@ var conn = mysql.createConnection({
     host:'localhost',
     user:'root',
     password:'root',
-    database: 'db_rest_api '
-})
+    database: 'db_rest_api'
+});
 
 conn.connect((err) =>
 {
