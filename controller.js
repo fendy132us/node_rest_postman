@@ -10,14 +10,29 @@ exports.index = function(req, resp)
 
 exports.select_all = function(req,resp)
 {
-   connection.query('select * from mahasiswa', function(error,rows,fields)
+   connection.query('select * from mahasiswa', function(error,rows)
    {
        if(error)
        {
-           connection.log(error);
+           console.log(error);
        }
        else {
           response.ok(rows,resp)
        }
    });
+};
+
+exports.select_id = function(req,resp)
+{
+
+    connection.query('select * from mahasiswa where id_mahasiswa = "'+ req.params.id +'"', function(error,rows)
+    {
+        if(error)
+        {
+            console.log(error);
+        }
+        else {
+           response.ok(rows,resp)
+        }      
+    });
 };

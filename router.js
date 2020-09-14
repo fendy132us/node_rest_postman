@@ -7,6 +7,9 @@ module.exports = function(app)
     app.route('/')       
           .get(jsonku.index);
           
-    app.route('/tampil')
+    app.route('/tampil/')
           .get(jsonku.select_all)
+
+    app.route('/tampil/:id')
+          .get(jsonku.select_id)
 }
