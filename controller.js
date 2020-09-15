@@ -36,3 +36,22 @@ exports.select_id = function(req,resp)
         }      
     });
 };
+
+exports.insert = function(req,resp)
+{
+    var nim = req.body.nim;
+    var nama = req.body.nama;
+    var jurusan = req.body.jurusan;
+
+    connection.query('insert into mahasiswa(nim,nama,jurusan) values(?,?,?)',[nim,nama,jurusan],(err,rows,) => 
+                      {
+                         if(err)
+                         {
+                             console.log(err);
+                         }
+                         else
+                         {
+                            response.ok('Berhasil insert data', resp);
+                         }
+                      });    
+};

@@ -12,4 +12,7 @@ module.exports = function(app)
 
     app.route('/tampil/:id')
           .get(jsonku.select_id)
+
+    app.route('/tambah')
+          .post(jsonku.insert)
 }
