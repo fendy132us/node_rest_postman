@@ -43,7 +43,7 @@ exports.insert = function(req,resp)
     var nama = req.body.nama;
     var jurusan = req.body.jurusan;
 
-    connection.query('insert into mahasiswa(nim,nama,jurusan) values(?,?,?)',[nim,nama,jurusan],(err,rows,) => 
+    connection.query('insert into mahasiswa(nim,nama,jurusan) values(?,?,?)',[nim,nama,jurusan],(err,rows) => 
                       {
                          if(err)
                          {
@@ -54,4 +54,42 @@ exports.insert = function(req,resp)
                             response.ok('Berhasil insert data', resp);
                          }
                       });    
+};
+
+exports.update = function(req,resp)
+{
+    var id = req.body.id_mahasiswa;
+    var nim = req.body.nim;
+    var nama = req.body.nama;
+    var jurusan = req.body.jurusan;
+
+    connection.query('update mahasiswa set nim =?, nama =?, jurusan =? ' + 
+    ' where id_mahasiswa =?', [nim,nama,jurusan,id] ,(err,rows,fields) =>
+     {               
+            if(err)
+            {
+                console.log(err);
+            }
+            else
+            {
+               response.ok('Update berhasil',resp );
+            }
+     });
+};
+
+exports.delete = function(req,resp)
+{
+    var id = req.body.id_mahasiswa;
+    connection.query('delete from mahasiswa ' + 
+    ' where id_mahasiswa = ?',[ id] ,(err,rows) =>
+    {
+        if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
+           response.ok('Delete berhasil',resp );
+        }     
+    });
 };
